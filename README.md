@@ -352,3 +352,305 @@ Expected output:
 ## Result
 
 Successfully implemented a single-node blockchain using Python and Flask. Transactions were added, blocks were mined using Proof of Work, and blockchain validity was checked using Postman.
+
+
+# Blockchain Technology – Practical 4 (A, B, C and D)
+
+---
+
+# Practical 4.A – Generate Multiple Blocks in Blockchain
+
+## Aim
+To implement a simple blockchain that generates multiple blocks, stores transactions in each block, links blocks using cryptographic hashes and displays the complete blockchain.
+
+## 1. Run the Program
+
+Open the VS Code terminal and type:
+
+```powershell
+python prac4a.py
+```
+
+## 2. Terminal Inputs
+
+**No manual input is required.**
+
+The program automatically:
+- Generates 5 blocks.
+- Creates 3 transactions per block.
+- Generates hashes for each block.
+- Links each block with the previous block's hash.
+
+## 3. Expected Output
+
+The terminal displays:
+
+```text
+=== BLOCKCHAIN ===
+
+Block 0
+Index: 0
+Transactions: []
+Previous Hash: 0
+Hash: Generated Hash
+
+Block 1
+Index: 1
+Transactions:
+User1 -> User2
+User1 -> User2
+User1 -> User2
+
+Block 2
+Index: 2
+Transactions:
+User2 -> User3
+User2 -> User3
+User2 -> User3
+```
+
+The remaining blocks are displayed similarly.
+
+*Note: Actual output is displayed in JSON format according to the journal code. Hash values are generated automatically.*
+
+## 4. Result
+
+Thus, a blockchain containing multiple linked blocks and transactions was successfully implemented.
+
+---
+
+# Practical 4.B – Blockchain Integrity Validation
+
+## Aim
+To implement a blockchain with multiple blocks and validate its integrity by checking block index, previous hash and current hash.
+
+## 1. Run the Program
+
+Open the VS Code terminal and type:
+
+```powershell
+python prac4b.py
+```
+
+## 2. Terminal Inputs
+
+**No manual input is required.**
+
+The program automatically:
+- Creates a genesis block.
+- Generates two additional blocks.
+- Adds transactions to the blocks.
+- Checks the blockchain's integrity.
+
+## 3. Expected Output
+
+The terminal displays the generated blocks.
+
+At the end, you should see:
+
+```text
+Is blockchain valid? True
+```
+
+## 4. Result
+
+Thus, blockchain integrity was successfully verified using block index, previous hash and current hash validation.
+
+---
+
+# Practical 4.C – Blockchain Using Proof of Work
+
+## Aim
+To implement a blockchain using Proof of Work (PoW), where blocks are mined by finding a nonce that generates a hash satisfying the required difficulty.
+
+## 1. Run the Program
+
+Open the VS Code terminal and type:
+
+```powershell
+python prac4c.py
+```
+
+## 2. Terminal Inputs
+
+**No manual input is required.**
+
+The program automatically:
+- Creates 3 blocks.
+- Adds 3 transactions per block.
+- Uses a difficulty level of 4.
+- Increases the nonce until the generated hash starts with four zeros.
+- Mines and displays the blocks.
+
+## 3. Expected Output
+
+The terminal displays the blockchain with block details.
+
+Example:
+
+```text
+=== BLOCKCHAIN ===
+
+Block Index: 0
+Nonce: ...
+Hash: 0000...
+
+Block Index: 1
+Nonce: ...
+Hash: 0000...
+
+Block Index: 2
+Nonce: ...
+Hash: 0000...
+```
+
+*Note: The actual output format depends on the print statements in your journal code. Nonce and hash values are generated automatically. The mined hashes should start with four zeros.*
+
+## 4. Result
+
+Thus, a blockchain using the Proof of Work consensus mechanism was successfully implemented.
+
+---
+
+# Practical 4.D – Blockchain Using User-Provided Transactions
+
+## Aim
+To implement a blockchain that generates multiple linked blocks using user-provided transaction details.
+
+## 1. Run the Program
+
+Open the VS Code terminal and type:
+
+```powershell
+python prac4d.py
+```
+
+## 2. Enter the Inputs in Terminal
+
+When the program asks:
+
+**Enter number of blocks:**
+
+```text
+3
+```
+
+**Enter transactions per block:**
+
+```text
+2
+```
+
+Now enter the transaction details when prompted.
+
+### Block 1 – Transaction 1
+
+```text
+Sender: Bob
+Recipient: Alice
+Amount: 100
+```
+
+### Block 1 – Transaction 2
+
+```text
+Sender: Rahul
+Recipient: Pritam
+Amount: 200
+```
+
+### Block 2 – Transaction 1
+
+```text
+Sender: John
+Recipient: David
+Amount: 300
+```
+
+### Block 2 – Transaction 2
+
+```text
+Sender: Sam
+Recipient: Alex
+Amount: 400
+```
+
+### Block 3 – Transaction 1
+
+```text
+Sender: Peter
+Recipient: Michael
+Amount: 500
+```
+
+### Block 3 – Transaction 2
+
+```text
+Sender: Kevin
+Recipient: Ryan
+Amount: 600
+```
+
+## 3. Expected Output
+
+After entering all the details, the program displays:
+
+```text
+=== BLOCKCHAIN ===
+
+Block 0:
+Genesis Block
+
+Block 1:
+Transactions:
+Bob -> Alice : 100
+Rahul -> Pritam : 200
+
+Block 2:
+Transactions:
+John -> David : 300
+Sam -> Alex : 400
+
+Block 3:
+Transactions:
+Peter -> Michael : 500
+Kevin -> Ryan : 600
+```
+
+*Note: Your actual output will follow the JSON/print format in your Python code and will include automatically generated hash values.*
+
+## 4. Result
+
+Thus, a blockchain was successfully implemented using user-provided transaction details. Multiple blocks were generated and linked using cryptographic hashes.
+
+---
+
+# Important Practical Exam Notes
+
+| Practical | Manual Input Required? | Main Concept |
+|---|---|---|
+| 4.A | No | Multiple blocks and transactions |
+| 4.B | No | Blockchain validation |
+| 4.C | No | Proof of Work and mining |
+| 4.D | Yes | User-provided transactions |
+
+## Important Terminal Commands
+
+```powershell
+python prac4a.py
+python prac4b.py
+python prac4c.py
+python prac4d.py
+```
+
+## Important Concepts for Viva
+
+1. **Blockchain:** A chain of blocks linked using cryptographic hashes.
+2. **Genesis Block:** The first block in a blockchain.
+3. **Hash:** A fixed-length value generated from data using a hashing algorithm.
+4. **SHA-256:** A cryptographic hashing algorithm.
+5. **Nonce:** A number changed during mining to find a valid hash.
+6. **Proof of Work:** A consensus mechanism that requires computational work to mine a block.
+7. **Previous Hash:** The hash of the previous block, used to link blocks together.
+8. **Blockchain Validation:** Checking whether blocks and their hashes are valid.
+
